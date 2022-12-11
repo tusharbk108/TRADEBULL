@@ -1,0 +1,63 @@
+<app-adminnavbar></app-adminnavbar>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+<div class="heading">
+  
+<div *ngIf="history" class="table-responsive-md " id="">
+    <button type="submit" class="fas fa-arrow-alt-circle-left" (click)="goToAdmin()" style="border-radius: 10px; border-color: green; background-color: blanchedalmond;"></button>
+   
+        <h2>Pending Orders </h2> 
+     <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>Company Name</th>
+                    <th>Company Id</th>
+                    <th>Amount</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Buy/Sell</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let elements of history | async ">
+                    <td data-label="Order ID">{{elements.index}}</td>
+                    <td data-label="Company Name">{{elements.company_name}}</td>
+                    <td data-label="Company Id">{{elements.company_id}}</td>
+                    <td data-label="Company Price">{{elements.price}}</td>
+                    <td data-label="Company Quantity">{{elements.quantity}}</td>
+                    <td data-label="Company Date">{{elements.date}}</td>
+                    <td data-label="Company time">{{elements.time}}</td>
+                    <td data-label="User Id">{{elements.user_id}}</td>
+
+                    <td>
+                        <button type="button" class="btn btn-success"
+                            (click)="acceptOrder(elements.index)">Accept</button> &nbsp;
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger"
+                            (click)="rejectOrder(elements.index)">Reject</button>
+                    </td>
+                    <td>{{elements.status}}</td>
+                    <td [ngClass]="{'green': (elements.price < 0),'red':(elements.price > 0)}"
+                        style="font-size: large;">
+                        {{elements.type}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <p *ngIf="!history" class="noData">
+        Nothing available in your Transactions
+    </p>
+</div>

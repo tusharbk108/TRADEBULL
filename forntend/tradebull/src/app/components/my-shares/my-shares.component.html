@@ -1,0 +1,58 @@
+<div class="heading" style="padding-bottom: 280px; margin-top: 40px;">
+    <div *ngIf="myShares" class="table-responsive-sm" id=""> 
+        <h2>My Shares</h2><br>
+        
+        <table class="table table-borderles table-hover">
+                <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Current Rate</th>
+                    <th>Bought Rate</th>
+                    <th>Quantity</th>
+                    <th>Open Rate</th>
+                    <th>Close Rate</th>
+                    <th>Today's Peak Price</th>
+                    <th>Today's Low Price</th>
+                    <!-- <th>Date</th>
+                    <th>Time</th> -->
+                    <th>Year Low</th>
+                    <th>Year High</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+            
+                <tbody>
+                    <tr *ngFor="let elements of myShares">
+                        <td data-label="Name">{{elements.name}}</td>
+                        <td data-label="CurrentRate">{{elements.current_rate}}</td>
+                        <td data-label="Bought Rate">{{elements.bought_rate}}</td>
+                        <td data-label="Quantity">{{elements.quantity}}</td>
+                        <td data-label="Open Rate">{{elements.open_rate}}</td>
+                        <td data-label="Close Rate">{{elements.close_rate}}</td>
+                        <td data-label="Peak Rate">{{elements.peak_rate}}</td>
+                        <td data-label="Least Rate">{{elements.least_rate}}</td>
+                        <!-- <td style="font-size: 9px;font-weight: bold;">{{elements.date}}</td>
+                        <td>{{elements.time}}</td> -->
+                        <td data-label="Year Low">{{elements.year_low}}</td>
+                        <td data-label="Year High">{{elements.year_high}}</td> 
+                        <td>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-outline-primary sell">Details</button>
+                        </td>
+                        <td>                                 
+                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-outline-success">buy</button>
+                        </td>
+                        <td>
+                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-outline-danger sell">sell</button>
+                        </td>
+                    </tr>   
+                    
+                </tbody>
+        </table>
+    </div>
+    <p *ngIf="!myShares" class="noData">
+        There are No Shares in your Account
+    </p>
+</div> 
+<app-footer></app-footer>

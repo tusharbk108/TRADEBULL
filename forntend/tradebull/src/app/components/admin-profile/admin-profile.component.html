@@ -1,0 +1,101 @@
+<app-adminnavbar></app-adminnavbar>
+<body style="background-color: #d0d5d8;">
+<div class="container" style="padding-bottom: 100px;">
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <br><br>
+            <br>
+            
+    <button type="submit" class="fas fa-arrow-alt-circle-left" (click)="goToAdmin()" style="border-radius: 10px; border-color: green; background-color: blanchedalmond;"></button>
+            <div class="container emp-profile" style="background: linear-gradient(#bdc3c7,#2c3e50);border-radius: 20px;">
+                <form method="post">
+                    <div *ngIf="userDetails" class="row">
+
+                        <div class="col-md-4">
+
+                            <div class="user-img">
+                                <img src="assets/images/user.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-head">
+                                <h5 style="margin-left: 0;">
+                                  Hi   {{userDetails[0].name}}
+                                </h5>
+                                <br>
+
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div *ngIf="userDetails" class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Amount Left</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{userDetails[0].amount_left}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{userDetails[0].name}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6" >
+                                            <p>{{userDetails[0].email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{userDetails[0].phone}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                  <br>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+      <div class="col-md-6" style="margin-top: 90px;" >
+<img src="https://i.pinimg.com/originals/06/66/35/066635d69061c3ee8ebd21405e0a2d93.png" style="height: 95%; width: 100%; border-radius: 20px;">
+      </div>
+ 
+    <app-footer></app-footer>
+  </div>
+</div>
+</body>

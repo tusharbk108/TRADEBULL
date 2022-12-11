@@ -1,0 +1,139 @@
+thead
+{
+    background-color: #3c3d3d;
+}
+
+.heading{
+    
+    margin-top: 50px;
+    width:90%;
+    margin-left: 5%;
+}
+.tableContainer{
+    width:100%;
+    height:500px;
+    margin-left: 5%;
+    margin-top:3%;
+}
+
+.coulmn_head{
+    position:relative;
+    font-size: small;
+}
+th {
+    background-color: #3c3d3d;
+    color: white;
+    width:20%;
+    margin-left:50px;
+    font-size: 11px;
+}
+tr{
+    background-color: #aeb1b0a6;
+    color: black;
+}
+
+.noData
+{
+    margin-top:150px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.scrollbar
+{
+	margin-left: 30px;
+	height: 300px;
+	width: 95%;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	margin-bottom: 25px;
+}
+tr:hover
+{
+    background-color:   aliceblue !important;   
+}
+.force-overflow
+{
+	min-height:400px;
+}
+
+#tableID::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#tableID::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#tableID::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+}
+
+fa-icon
+{
+    float:right;
+    margin-right:80px;
+    margin-top:-40px;
+}
+
+body{
+    margin: 0px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+.table th{
+    background-color: darkblue;
+}
+@media(max-width: 769px){
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position:absolute;
+        left: 0%;
+        width: 30%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: rgb(219, 30, 30);
+        font-style: oblique;
+        font-family: sans-serif;
+    }
+    .table tbody tr td .btn{
+       width: 140px;
+        text-decoration: none;
+        line-height: 20px;
+        display: inline-block;
+        text-align: center;
+        left:40px;
+        
+    }
+}
+button{
+    position:sticky;
+    left: 50%;
+    right: 50%;
+    }
+
+

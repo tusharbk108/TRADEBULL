@@ -1,0 +1,72 @@
+<nav  class="navbar navbar-expand-lg navbar-dark mr-auto position-fixed  " style="width: 100%; height: 45px;">
+    <div *ngIf="!isLogedIn()" class="navbar-nav ml-auto" style="height: 35px;">
+        <li class="nav-item active navbarList">
+            <div class="img1 ">
+                <a routerLink="/home">
+                    <img class="img1 hidden-tablet hidden-phone" src="assets/images/logo1.png" width="40" height="20">
+                </a>
+            </div>
+          
+            
+        </li>
+        <li>
+        <!-- <a routerLink="/home"><a class="active" href="#" style="color:#f8f2f2;"><i class="fa fa-fw fa-home" width="100"
+            height="2"></i></a>   
+        </a> -->
+        </li>
+        
+    </div>
+    
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarResponsive"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" *ngIf="isLogedIn()">
+           
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/" class="nav-link">Company</a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/my-shares" class="nav-link">MyShares</a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/watch" class="nav-link">Watchlist</a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/profile" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/userOrder" class="nav-link">Order</a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/history" class="nav-link">Transaction </a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                
+                <a routerLink="/topheading" class="nav-link" >News </a>
+            </li>
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/logout" class="nav-link">Logout</a>
+            </li>
+
+
+        </ul>
+        <ul *ngIf="!isLogedIn()" class="navbar-nav ml-auto">
+
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/about" class="nav-link">About</a>
+            </li>
+
+            <li class="nav-item active navbarList nav-tabs">
+                <a routerLink="/contact" class="nav-link">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<router-outlet> </router-outlet>

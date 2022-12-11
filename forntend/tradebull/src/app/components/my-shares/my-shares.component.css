@@ -1,0 +1,105 @@
+.heading{
+    text-align: center;
+    margin-top: 50px;
+    width:90%;
+    margin-left: 5%;
+}
+.noData
+{
+    margin-top:150px;
+    font-size: 22px;
+    font-weight: 600;
+}
+tr:hover
+{
+    
+    background-color:aliceblue !important;    
+}
+.force-overflow
+{
+	min-height:400px;
+}
+#tableID::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	
+}
+h2{
+    text-align: center;
+    margin-top: 3%;
+   
+  }
+  tr{
+     font-weight: bold;
+    /* background-color: rgb(226, 224, 224); */
+    color: black;
+  }
+
+  thead{
+      background-color: white;
+      color:black;
+  }
+  th {
+    background-color: rgb(92, 91, 91);
+    color: white;
+    width:10%;
+    margin-left:100px;
+    }
+
+.cname{
+    color: rgb(53, 78, 47);
+}
+body{
+    margin: 0px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+.table th{
+    background-color: darkblue;
+}
+@media(max-width: 769px){
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position:absolute;
+        left: 0%;
+        width: 30%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: rgb(219, 30, 30);
+        font-style: oblique;
+        font-family: sans-serif;
+    }
+    .table tbody tr td .btn{
+       width: 140px;
+        text-decoration: none;
+        line-height: 20px;
+        display: inline-block;
+        text-align: center;
+        left:40px;
+        
+    }
+}
+button{
+    position:sticky;
+    left: 50%;
+    right: 50%;
+    }
+

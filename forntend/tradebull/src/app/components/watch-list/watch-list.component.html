@@ -1,0 +1,51 @@
+
+<div class="heading" style="padding-bottom: 280px; margin-top: 40px;">
+    <h2>Watch List Company</h2><br>
+    <div *ngIf="watchList" class="table-responsive-md " > 
+       
+        <table class="table table-borderles table-hover">
+                <thead>
+                <tr>
+                    <th >Company Name</th>
+                    <th>Open Rate</th>
+                    <th>Close Rate</th>
+                    <th>Today's Peak Price</th>
+                    <th>Today's Low Price</th>
+                    <th>Current Rate</th>
+                    <th>Year Low</th>
+                    <th>Year High</th>
+                    <th></th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let elements of watchList">
+                        <td class="cname" data-label="Company Name">{{elements.name}}</td>
+                        <td data-label="Open Rate">{{elements.open_rate}}</td>
+                        <td data-label="Close Rate">{{elements.close_rate}}</td>
+                        <td data-label="Peak Rate">{{elements.peak_rate}}</td>
+                        <td data-label="Least Rate"> {{elements.least_rate}}</td>
+                        <td data-label="Current Rate">{{elements.current_rate}}</td>
+                        <td data-label="Year Low">{{elements.year_low}}</td>
+                        <td data-label="Year High">{{elements.year_high}}</td>
+                        <td>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-outline-primary">Details</button>
+                        </td>
+                        <td>                                 
+                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-outline-success">Buy</button>
+                        </td>
+                        <td>
+                            <button (click)="removeFromWatchlist(elements.company_id,elements.name)" type="button" class="btn btn-outline-danger">Remove</button>                        </td>
+                    </tr>   
+                    
+                </tbody>
+        </table>        
+    </div>
+
+    <p *ngIf="!watchList" class="noData">
+        Nothing available in your watchList
+    </p>     
+</div> 
+<app-footer></app-footer>

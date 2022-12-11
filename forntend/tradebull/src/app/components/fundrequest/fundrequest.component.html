@@ -1,0 +1,53 @@
+<app-adminnavbar></app-adminnavbar>
+
+<body style="margin-bottom: 62px; margin-top: 40px;">
+    <div class="container">
+        <br><br>
+        <div class="afterlogin" *ngIf="isLogedIn()">
+            <div *ngIf="admin" class="table-responsive-md " id="">
+
+                <button type="submit"   class="fas fa-arrow-alt-circle-left" (click)="goToAdmin()" style="border-radius: 10px; border-color: green; background-color: blanchedalmond;"></button>
+
+                <table class="table table-borderles table-hover" id="excel-table" style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>User_Id</th>
+                            <th>Date_Time</th>
+                            <th>Amount</th>
+                            <th>Add/Withdraw</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let elements of admin | async ">
+
+                            <td data-label="User Id">{{elements.userid}}</td>
+                            <td data-label="Date_Time">{{elements.dateTime}}</td>
+                            <td data-label="Amount">{{elements.amount}}</td>
+                            <td data-label="Type">{{elements.type}}</td>
+                            <td data-label="Status">{{elements.status}}</td>
+
+                            <td><button type="submit" class="btn btn-outline-danger"
+                                 (click)="approvefund(elements.sno)"  >Approve </button></td>
+                            <td><button type="submit" class="btn btn-outline-success"
+                                (click)="rejectfund(elements.sno)"    >Reject </button></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <p *ngIf="!admin" class="noData">
+                Nothing available
+            </p>
+        </div>
+    </div>
+</body>
+<app-footer></app-footer>
